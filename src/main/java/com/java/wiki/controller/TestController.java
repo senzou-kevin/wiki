@@ -1,6 +1,9 @@
 package com.java.wiki.controller;
 
+
 import com.java.wiki.domain.TestObj;
+import com.java.wiki.exception.WikiException;
+import com.java.wiki.exception.code.WikiExceptionCode;
 import com.java.wiki.resp.CommonResp;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -20,4 +23,13 @@ public class TestController {
         return CommonResp.success(testObj);
     }
 
+    @GetMapping("/testWikiException")
+    public CommonResp testWikiException() {
+        boolean dataOperation = false;
+        if (dataOperation) {
+            return CommonResp.success("test wiki exception successfully");
+        } else {
+            throw new WikiException(WikiExceptionCode.WIKI_DB_OPERATION_FAIL, "db operation fail");
+        }
+    }
 }

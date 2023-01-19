@@ -1,8 +1,10 @@
 package com.java.wiki.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.java.wiki.domain.TestObj;
+import com.java.wiki.resp.CommonResp;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping("/test")
@@ -11,6 +13,11 @@ public class TestController {
     @GetMapping("/hello")
     public String hello(){
         return "hello world";
+    }
+
+    @PostMapping("/testException")
+    public CommonResp testException(@RequestBody @Validated TestObj testObj){
+        return CommonResp.success(testObj);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.java.wiki.exception;
+package com.java.wiki.handler;
 
 import com.java.wiki.commons.ResultCode;
 import com.java.wiki.resp.CommonResp;

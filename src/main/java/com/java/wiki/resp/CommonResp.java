@@ -1,6 +1,8 @@
 package com.java.wiki.resp;
 
 
+import com.java.wiki.commons.ResultCode;
+
 /**
  * commonResponse to front-end
  * @param <T>
@@ -11,6 +13,11 @@ public class CommonResp<T> {
      * true: success, false:fail
      */
     private boolean success = true;
+
+    /**
+      the code that represents if the request is successful or not
+     */
+    private int statusCode;
 
     /**
      * successful or fail message to front-end
@@ -27,14 +34,16 @@ public class CommonResp<T> {
         commonResp.setMessage("success");
         commonResp.setSuccess(true);
         commonResp.setContent(data);
+        commonResp.setStatusCode(ResultCode.SUCCESS.getCode());
         return  commonResp;
     }
 
-    public static <T> CommonResp<T> fail(T data,String errorMessage){
+    public static <T> CommonResp<T> fail(String errorMessage,int errorCode){
         CommonResp<T> commonResp = new CommonResp<>();
         commonResp.setMessage(errorMessage);
         commonResp.setSuccess(false);
         commonResp.setContent(null);
+        commonResp.setStatusCode(errorCode);
         return commonResp;
     }
 
@@ -62,5 +71,11 @@ public class CommonResp<T> {
         this.content = content;
     }
 
+    public int getStatusCode() {
+        return statusCode;
+    }
 
+    public void setStatusCode(int statusCode) {
+        this.statusCode = statusCode;
+    }
 }

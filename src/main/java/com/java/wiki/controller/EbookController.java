@@ -1,7 +1,7 @@
 package com.java.wiki.controller;
 
 
-import com.java.wiki.req.EbookReq;
+import com.java.wiki.req.EbookQueryReq;
 import com.java.wiki.resp.CommonResp;
 import com.java.wiki.resp.EbookResp;
 import com.java.wiki.resp.PageResp;
@@ -22,7 +22,7 @@ public class EbookController {
     private EbookService ebookService;
 
     @PostMapping("/list")
-    public CommonResp list(@RequestBody EbookReq req){
+    public CommonResp list(@RequestBody EbookQueryReq req){
         LOG.info("ebook request params:{}",req);
         PageResp<EbookResp> list = ebookService.list(req);
         return CommonResp.success(list);

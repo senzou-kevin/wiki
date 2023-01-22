@@ -5,7 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.java.wiki.domain.Ebook;
 import com.java.wiki.domain.EbookExample;
 import com.java.wiki.mapper.EbookMapper;
-import com.java.wiki.req.EbookReq;
+import com.java.wiki.req.EbookQueryReq;
 import com.java.wiki.resp.EbookResp;
 import com.java.wiki.resp.PageResp;
 import com.java.wiki.service.EbookService;
@@ -31,7 +31,7 @@ public class EbookServiceImpl implements EbookService {
 
 
     @Override
-    public PageResp<EbookResp> list(EbookReq req) {
+    public PageResp<EbookResp> list(EbookQueryReq req) {
         List<Ebook> ebookList;
         if(StringUtils.isEmpty(req.getName())){
             //pageHelper只对下面遇到第一个sql有用。pageNum从1开始。

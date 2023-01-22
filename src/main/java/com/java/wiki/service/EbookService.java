@@ -11,4 +11,6 @@ public interface EbookService {
 
     public void save(EbookSaveReq ebookSaveReq);
 
+    public void delete(Long id);
+
 }

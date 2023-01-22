@@ -3,7 +3,9 @@ package com.java.wiki.ebook;
 import com.java.wiki.config.WikiApplication;
 import com.java.wiki.domain.Ebook;
 import com.java.wiki.req.EbookReq;
+import com.java.wiki.req.PageReq;
 import com.java.wiki.resp.EbookResp;
+import com.java.wiki.resp.PageResp;
 import com.java.wiki.service.EbookService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,16 +29,18 @@ public class EbookTest {
     @Test
     public void findEbooks(){
         EbookReq ebookReq = new EbookReq();
-        List<EbookResp> ebooks = ebookService.list(ebookReq);
-        LOG.info("ebooks:{},size:{}",ebooks,ebooks.size());
+        ebookReq.setPage(1);
+        ebookReq.setSize(3);
+        PageResp<EbookResp> pageResp = ebookService.list(ebookReq);
+        LOG.info("ebooks:{},size:{}",pageResp.getList(), pageResp.getList().size());
 
         ebookReq.setName("教程");
-        ebooks = ebookService.list(ebookReq);
-        LOG.info("ebooks:{},size:{}",ebooks,ebooks.size());
+        pageResp = ebookService.list(ebookReq);
+        LOG.info("ebooks:{},size:{}",pageResp.getList(),pageResp.getList().size());
 
         ebookReq.setName("Java");
-        ebooks = ebookService.list(ebookReq);
-        LOG.info("ebooks:{},size:{}",ebooks,ebooks.size());
+        pageResp = ebookService.list(ebookReq);
+        LOG.info("ebooks:{},size:{}",pageResp.getList(),pageResp.getList().size());
     }
 
 

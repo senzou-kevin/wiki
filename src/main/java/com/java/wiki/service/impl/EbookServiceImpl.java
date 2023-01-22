@@ -11,6 +11,8 @@ import com.java.wiki.resp.PageResp;
 import com.java.wiki.service.EbookService;
 import com.java.wiki.util.CopyUtil;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,8 @@ import java.util.List;
 
 @Service
 public class EbookServiceImpl implements EbookService {
+
+    private static final Logger LOG = LoggerFactory.getLogger(EbookServiceImpl.class);
 
     @Resource
     private EbookMapper ebookMapper;
@@ -41,6 +45,7 @@ public class EbookServiceImpl implements EbookService {
             PageHelper.startPage(1,3);
             ebookList = ebookMapper.selectByExample(ebookExample);
         }
+        LOG.info("ebookList:{}",ebookList);
 
         PageInfo<Ebook> pageInfo = new PageInfo<>(ebookList);
 

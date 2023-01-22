@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.*;
 public class TestController {
 
     @GetMapping("/hello")
-    public String hello(){
-        return "hello world";
+    public CommonResp hello(){
+        return CommonResp.success("Hello World");
     }
 
     @PostMapping("/testException")

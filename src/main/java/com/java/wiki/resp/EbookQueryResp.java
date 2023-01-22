@@ -1,6 +1,6 @@
 package com.java.wiki.resp;
 
-public class EbookResp {
+public class EbookQueryResp {
 
     private Long id;
 

@@ -6,7 +6,7 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="category1_id" jdbcType="BIGINT" property="category1Id" />
     <result column="category2_id" jdbcType="BIGINT" property="category2Id" />
-    <result column="descprition" jdbcType="VARCHAR" property="descprition" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="cover" jdbcType="VARCHAR" property="cover" />
     <result column="doc_count" jdbcType="INTEGER" property="docCount" />
     <result column="view_count" jdbcType="INTEGER" property="viewCount" />
@@ -71,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, `name`, category1_id, category2_id, descprition, cover, doc_count, view_count, 
+    id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, 
     vote_count
   </sql>
   <select id="selectByExample" parameterType="com.java.wiki.domain.EbookExample" resultMap="BaseResultMap">
@@ -106,11 +106,11 @@
   </delete>
   <insert id="insert" parameterType="com.java.wiki.domain.Ebook">
     insert into ebook (id, `name`, category1_id, 
-      category2_id, descprition, cover, 
+      category2_id, description, cover, 
       doc_count, view_count, vote_count
       )
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{category1Id,jdbcType=BIGINT}, 
-      #{category2Id,jdbcType=BIGINT}, #{descprition,jdbcType=VARCHAR}, #{cover,jdbcType=VARCHAR}, 
+      #{category2Id,jdbcType=BIGINT}, #{description,jdbcType=VARCHAR}, #{cover,jdbcType=VARCHAR}, 
       #{docCount,jdbcType=INTEGER}, #{viewCount,jdbcType=INTEGER}, #{voteCount,jdbcType=INTEGER}
       )
   </insert>
@@ -129,8 +129,8 @@
       <if test="category2Id != null">
         category2_id,
       </if>
-      <if test="descprition != null">
-        descprition,
+      <if test="description != null">
+        description,
       </if>
       <if test="cover != null">
         cover,
@@ -158,8 +158,8 @@
       <if test="category2Id != null">
         #{category2Id,jdbcType=BIGINT},
       </if>
-      <if test="descprition != null">
-        #{descprition,jdbcType=VARCHAR},
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
       </if>
       <if test="cover != null">
         #{cover,jdbcType=VARCHAR},
@@ -196,8 +196,8 @@
       <if test="row.category2Id != null">
         category2_id = #{row.category2Id,jdbcType=BIGINT},
       </if>
-      <if test="row.descprition != null">
-        descprition = #{row.descprition,jdbcType=VARCHAR},
+      <if test="row.description != null">
+        description = #{row.description,jdbcType=VARCHAR},
       </if>
       <if test="row.cover != null">
         cover = #{row.cover,jdbcType=VARCHAR},
@@ -222,7 +222,7 @@
       `name` = #{row.name,jdbcType=VARCHAR},
       category1_id = #{row.category1Id,jdbcType=BIGINT},
       category2_id = #{row.category2Id,jdbcType=BIGINT},
-      descprition = #{row.descprition,jdbcType=VARCHAR},
+      description = #{row.description,jdbcType=VARCHAR},
       cover = #{row.cover,jdbcType=VARCHAR},
       doc_count = #{row.docCount,jdbcType=INTEGER},
       view_count = #{row.viewCount,jdbcType=INTEGER},
@@ -243,8 +243,8 @@
       <if test="category2Id != null">
         category2_id = #{category2Id,jdbcType=BIGINT},
       </if>
-      <if test="descprition != null">
-        descprition = #{descprition,jdbcType=VARCHAR},
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
       </if>
       <if test="cover != null">
         cover = #{cover,jdbcType=VARCHAR},
@@ -266,7 +266,7 @@
     set `name` = #{name,jdbcType=VARCHAR},
       category1_id = #{category1Id,jdbcType=BIGINT},
       category2_id = #{category2Id,jdbcType=BIGINT},
-      descprition = #{descprition,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
       cover = #{cover,jdbcType=VARCHAR},
       doc_count = #{docCount,jdbcType=INTEGER},
       view_count = #{viewCount,jdbcType=INTEGER},

@@ -9,7 +9,7 @@ public class Ebook {
 
     private Long category2Id;
 
-    private String descprition;
+    private String description;
 
     private String cover;
 
@@ -51,12 +51,12 @@ public class Ebook {
         this.category2Id = category2Id;
     }
 
-    public String getDescprition() {
-        return descprition;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescprition(String descprition) {
-        this.descprition = descprition;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getCover() {
@@ -101,7 +101,7 @@ public class Ebook {
         sb.append(", name=").append(name);
         sb.append(", category1Id=").append(category1Id);
         sb.append(", category2Id=").append(category2Id);
-        sb.append(", descprition=").append(descprition);
+        sb.append(", description=").append(description);
         sb.append(", cover=").append(cover);
         sb.append(", docCount=").append(docCount);
         sb.append(", viewCount=").append(viewCount);

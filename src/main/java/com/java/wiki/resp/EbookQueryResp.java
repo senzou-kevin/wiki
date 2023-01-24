@@ -10,7 +10,7 @@ public class EbookQueryResp {
 
     private Long category2Id;
 
-    private String descprition;
+    private String description;
 
     private String cover;
 
@@ -52,12 +52,12 @@ public class EbookQueryResp {
         this.category2Id = category2Id;
     }
 
-    public String getDescprition() {
-        return descprition;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescprition(String descprition) {
-        this.descprition = descprition;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getCover() {
@@ -99,7 +99,7 @@ public class EbookQueryResp {
                 ", name='" + name + '\'' +
                 ", category1Id=" + category1Id +
                 ", category2Id=" + category2Id +
-                ", descprition='" + descprition + '\'' +
+                ", description='" + description + '\'' +
                 ", cover='" + cover + '\'' +
                 ", docCount=" + docCount +
                 ", viewCount=" + viewCount +
